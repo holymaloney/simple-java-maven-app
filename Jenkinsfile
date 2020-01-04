@@ -10,13 +10,25 @@ pipeline {
     stage('Initialize') {
       steps {
         echo 'Hello'
+        sh 'mvn --version'
       }
     }
 
     stage('Build') {
       steps {
-        sh '''echo `mvn --version`
-mvn -DskipTests install'''
+        sh 'mvn -DskipTests install'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'mvn test'
+      }
+    }
+
+    stage('Report') {
+      steps {
+        junit 'target/surefire-reports/*.xml'
       }
     }
 
