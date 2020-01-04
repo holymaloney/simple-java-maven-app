@@ -13,5 +13,12 @@ pipeline {
       }
     }
 
+    stage('Build') {
+      steps {
+        sh '''echo ´mvn --version´
+mvn -DskipTests install'''
+      }
+    }
+
   }
 }
