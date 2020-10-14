@@ -1,9 +1,5 @@
 pipeline {
-  agent {
-    any
-    }
-
-  }
+  agent any
   stages {
     stage('Initialize') {
       steps {
