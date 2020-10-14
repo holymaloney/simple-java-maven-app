@@ -10,6 +10,7 @@ pipeline {
     stage('Initialize') {
       steps {
         echo 'Hello'
+	sh 'env'
         sh 'mvn --version'
       }
     }
